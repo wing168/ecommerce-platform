@@ -46,13 +46,15 @@ class Directory extends React.Component {
     render() {
         return(
             <div className="directory-menu">
-                {this.state.sections.map(({title, imageUrl, id, size}) => (
-                    <MenuItem key={id} title={title} imageUrl={imageUrl} size={size} />
+                {this.state.sections.map(({ id, ...otherSectionProps }) => (
+                    <MenuItem key={id} {...otherSectionProps} />
                 ))}
             </div>
         );
     }
 
 }
+
+/* as we are calling most of the props as the same name, can use the ES6 shorthand to pass through all props using the spread operator */
 
 export default Directory;
