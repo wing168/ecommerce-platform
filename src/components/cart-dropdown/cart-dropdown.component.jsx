@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
 
+
 import CustomButton from '../custom-buttons/custom-button.components';
 import CartItems from '../cart-items/cart-items.component';
 import { cartItemsSelector } from '../../redux/cart/cart.selectors';
@@ -29,7 +30,7 @@ const CartDropdown = ({ cartItems, history, dispatch }) => {
             cartItems.length > 0
             ?
             <CustomButton onClick={()=> {
-            history.push('./checkout');
+            history.push('/checkout');
             dispatch(toggleCartHidden());
             }}>
             GO TO CHECKOUT</CustomButton>
