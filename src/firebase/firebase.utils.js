@@ -3,14 +3,14 @@ import 'firebase/firestore';
 import 'firebase/auth';
 
 const config = {
-    apiKey: "AIzaSyBrNUB2MBbyve7WBz1bk5n8J199KE6lQGQ",
-    authDomain: "crwn-clothing-9adfd.firebaseapp.com",
-    databaseURL: "https://crwn-clothing-9adfd.firebaseio.com",
-    projectId: "crwn-clothing-9adfd",
-    storageBucket: "crwn-clothing-9adfd.appspot.com",
-    messagingSenderId: "688909884473",
-    appId: "1:688909884473:web:c8488b9b801443a43701e8",
-    measurementId: "G-H7PQZNRCLV"
+  apiKey: "AIzaSyB9WarXZ30W3AlyhUvltoPQRnobWixwmQg",
+  authDomain: "crwn-db-c17a7.firebaseapp.com",
+  databaseURL: "https://crwn-db-c17a7.firebaseio.com",
+  projectId: "crwn-db-c17a7",
+  storageBucket: "crwn-db-c17a7.appspot.com",
+  messagingSenderId: "200504535371",
+  appId: "1:200504535371:web:2686d95d155ee65b5260ce",
+  measurementId: "G-WQMBKMZ4VG"
   };
 
   export const createUserProfileDocument = async (userAuth, additionalData) => {
@@ -50,3 +50,12 @@ const config = {
   export const SignInWithGoogle = () =>auth.signInWithPopup(provider);
 
   export default firebase;
+
+  // apiKey: "AIzaSyBrNUB2MBbyve7WBz1bk5n8J199KE6lQGQ",
+  //   authDomain: "crwn-clothing-9adfd.firebaseapp.com",
+  //   databaseURL: "https://crwn-clothing-9adfd.firebaseio.com",
+  //   projectId: "crwn-clothing-9adfd",
+  //   storageBucket: "crwn-clothing-9adfd.appspot.com",
+  //   messagingSenderId: "688909884473",
+  //   appId: "1:688909884473:web:c8488b9b801443a43701e8",
+  //   measurementId: "G-H7PQZNRCLV"
