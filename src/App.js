@@ -1,10 +1,11 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import { auth , createUserProfileDocument} from './firebase/firebase.utils';
+import { auth , createUserProfileDocument } from './firebase/firebase.utils';
 import { connect } from 'react-redux';
 import { setCurrentUser } from './redux/user/user.actions';
 import { currentUserSelector } from './redux/user/user.selectors';
 import { createStructuredSelector } from 'reselect';
+
 
 
 import './App.css';
@@ -27,7 +28,7 @@ class App extends React.Component {
   
 
   componentDidMount() {
-    const { setCurrentUser } = this.props
+    const { setCurrentUser } = this.props; 
 
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async user => {
       if (user) {
@@ -44,10 +45,7 @@ class App extends React.Component {
       }else {
         setCurrentUser(user)
       };
-
-      
-      
-    })
+    });
   }
 
   componentWillUnmount() {

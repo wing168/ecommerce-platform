@@ -12,10 +12,15 @@ export const collectionsSelector = createSelector(
 
 export const collectionSelector = collectionUrlParam => createSelector(
     [collectionsSelector],
-    collections => collections[collectionUrlParam]
+    collections => collections ? collections[collectionUrlParam] : null
 );
 
 export const collectionsSelectorForPreview = createSelector(
     [collectionsSelector],
-    collections => Object.keys(collections).map(key => collections[key])
+    collections => collections ? Object.keys(collections).map(key => collections[key]) : []
 );
+
+export const isFetchingSelector = createSelector(
+    [shopSelector],
+    shop => shop.isFetching
+)

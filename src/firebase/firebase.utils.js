@@ -40,6 +40,39 @@ const config = {
     return userRef;
   };
 
+  // This code was used once to import all the shop data into firebase - used this code so we didn't have to import it manually
+  export const addCollectionAndDocuments = (collectionKey, itemToAdd) => {
+    const collectionRef = firestore.collection(collectionKey);
+    const batch = firestore.batch();
+
+    itemToAdd.forEach(obj => {
+      const newDocRef = collectionRef.doc();
+      batch.set(newDocRef, obj)
+    });
+
+    batch.commit();
+
+  }; 
+
+  export const transformFirebaseDataToUse = input => {
+    const transformedData = input.docs.map(doc => {
+      const { title, items } = doc.data();
+
+      return {
+        routeName: encodeURI(title.toLowerCase()),
+        id: doc.id,
+        title,
+        items
+      }
+    })
+    
+    return transformedData.reduce((acc, item) => {
+      acc[item.title.toLowerCase()] = item;
+      return acc;
+    } , {})
+  }
+
+
   firebase.initializeApp(config);
 
   export const auth = firebase.auth();
