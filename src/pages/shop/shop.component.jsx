@@ -9,7 +9,7 @@ import CollectionOverview from '../../components/collections-overview/collection
 import CollectionPage from '../collection/collection.component';
 import WithSpinner from '../../components/with-spinner/with-spinner.component';
 
-import { isFetchingSelector } from '../../redux/shop/shop.selectors';
+import { isFetchingSelector, isCollectionLoadedSelector } from '../../redux/shop/shop.selectors';
 
 const CollectionOverviewWithSpinner = WithSpinner(CollectionOverview);
 const CollectionPageWithSpinner = WithSpinner(CollectionPage);
@@ -23,11 +23,11 @@ class ShopPage extends React.Component {
     }
 
     render () {
-        const { match, isFetching } = this.props;
+        const { match, isFetching, isCollectionLoaded } = this.props;
         return (
             <div className='shop-page'>
                 <Route exact path={`${match.path}`} render={(props) => <CollectionOverviewWithSpinner isLoading={isFetching} {...props} /> } />
-                <Route path={`${match.path}/:collectionId`} render={(props) => <CollectionPageWithSpinner isLoading={isFetching} {...props} />} />
+                <Route path={`${match.path}/:collectionId`} render={(props) => <CollectionPageWithSpinner isLoading={!isCollectionLoaded} {...props} />} />
         
             </div>
         )
@@ -35,7 +35,8 @@ class ShopPage extends React.Component {
 }
 
 const mapStateToProps = createStructuredSelector({
-    isFetching: isFetchingSelector
+    isFetching: isFetchingSelector,
+    isCollectionLoaded: isCollectionLoadedSelector
 })
 
 const mapDispatchToProps = dispatch => ({
