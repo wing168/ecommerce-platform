@@ -4,6 +4,7 @@
     height: 70px;
     justify-content: space-between;
     margin-bottom: 25px;
+    background-color: rgb(36, 36, 36);
 }
 
 .logo-container {
@@ -12,7 +13,11 @@
 }
 
 .logo-name {
-    margin-left: 15px;
+    margin-left: 60px;
+    
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 50px;
 }
 
 .nav-options {
@@ -27,6 +32,7 @@
 
 .nav-link {
     padding: 10px 15px;
+    color: white;
 }
 
 .signout {

@@ -15,6 +15,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
+const test = process.env.PORT;
+
+console.log(test);
+
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, 'client/build')));
 
@@ -38,10 +42,10 @@ app.post('/payment', (req, res) => {
     stripe.charges.create(body, (stripeErr, stripeRes) => {
         if (stripeErr) {
             res.status(500).send({ error: stripeErr })
-            console.log(stripeErr);
+            
         } else {
             res.status(200).send({ success: stripeRes })
-            console.log(stripeRes);
+            
         }
     })
 })

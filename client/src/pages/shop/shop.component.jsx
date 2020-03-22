@@ -11,6 +11,8 @@ import WithSpinner from '../../components/with-spinner/with-spinner.component';
 
 import { isFetchingSelector, isCollectionLoadedSelector } from '../../redux/shop/shop.selectors';
 
+import './shop.styles.scss';
+
 const CollectionOverviewWithSpinner = WithSpinner(CollectionOverview);
 const CollectionPageWithSpinner = WithSpinner(CollectionPage);
 
