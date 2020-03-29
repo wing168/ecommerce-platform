@@ -19,3 +19,15 @@
     }
 
 }
+
+/* Media query */ 
+
+@media screen and (max-width: 800px) {
+    .collection-page {
+        padding: 10px;
+        
+        .items {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}

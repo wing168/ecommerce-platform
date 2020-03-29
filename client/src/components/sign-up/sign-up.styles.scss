@@ -1,3 +1,17 @@
 .signup {
     width: 450px;
 }
+
+/*Media query */ 
+
+@media screen and (max-width: 800px) {
+    .signup {
+        width: 90%;
+        padding-left: 10px;
+
+        .custom-button {
+            min-width: unset;
+            font-size: 10px;
+        }
+    }
+}

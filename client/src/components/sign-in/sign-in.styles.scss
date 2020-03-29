@@ -14,3 +14,25 @@
     }
     
 }
+
+/*Media query */ 
+
+@media screen and (max-width: 800px) {
+    .sign-in {
+        width: 100%;
+        padding-left: 10px;
+
+        .button {
+            width: 90%;
+            justify-content: space-evenly;
+
+            .custom-button {
+                min-width: unset;
+                font-size: 10px;
+            }
+            
+        }
+
+
+    }
+}

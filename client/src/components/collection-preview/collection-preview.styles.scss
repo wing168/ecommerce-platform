@@ -13,3 +13,17 @@
     display: flex;
     justify-content: space-between;
 }
+
+/* Media query */ 
+
+@media screen and (max-width: 800px) {
+    .preview {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 25px;
+    }
+
+    .collection-preview {
+        padding: 0 10px;
+    }
+}
